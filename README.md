@@ -28,7 +28,7 @@ Function: “User Login”: Using Login.js and login.html;
 
 “Remove all Questions on Map“: Using index.html, appActivity.js;
 
-“Contact Us”: Using index.html and appActivity.js
+“Contact Us” (The contact information of developer which is a div in index.html): Using index.html and appActivity.js
 
 “Help” (The guide line for user which is a div in index.html): Using index.html and appActivity.js;
 
