@@ -1,8 +1,10 @@
+//function user_register, processData and dataUploaded are adapted from the tutorial of this module
 function user_register(){
     alert ("Start Register!");
     var register_email = document.getElementById("register_email").value;
     var register_pass = document.getElementById("register_pass").value;
     var register_username = document.getElementById("register_username").value;
+    //the values which will pased into database table are register_email,register_pass and register_username
     var postString = "register_email="+register_email +"&register_pass="+register_pass+"&register_username="+register_username;
     processData(postString);
 }

@@ -151,7 +151,7 @@ var questionlayer;
 
 //function getNearQuestion is design for the function "Get the nearest question" in the index page
 function getNearQuestion(){
-   alert('Getting Questions Near You!');
+   alert('Getting the Nearest question!');
    // getQuestionData is the function to get the closest question
    navigator.geolocation.getCurrentPosition(getQuestionData);
 }
@@ -178,10 +178,9 @@ var testMarkerPink = L.AwesomeMarkers.icon({
 
 //function getQuestionData,nearquestionResponse,nearquestionlayer are created based on the reference from the tutorial of this module
 function getQuestionData(position){
-    alert("your position is"+ position.coords.latitude + position.coords.longitude);
+    alert("your position is: "+ position.coords.latitude +" ,"+ position.coords.longitude);
     locationcoord_lat = position.coords.latitude;
     locationcoord_lng =  position.coords.longitude;
-    alert(locationcoord_lat + " "+ locationcoord_lng);
     L.marker([position.coords.latitude,position.coords.longitude]).addTo(mymap).bindPopup("<b>I am your place!</b>").openPopup();
     client = new XMLHttpRequest();
     //the detail of this url setting is in httpServer.js
@@ -196,7 +195,6 @@ function nearquestionResponse() {
     if (client.readyState == 4) {
         // once the data is ready, process the data
         var nearquestiondata = client.responseText;
-        alert("client ready");
         nearquestionlayer(nearquestiondata);
     }
 }
@@ -314,7 +312,7 @@ function calculateDistance(lat1, lon1, lat2, lon2, unit) {
 
 // function getLocation and getPosition are all based on the reference from the the tutorial of this module.
 function getLocation() {
-    alert('getting location');
+    alert('Getting location...');
     navigator.geolocation.getCurrentPosition(getPosition);
 }
 function getPosition(position) {
@@ -323,15 +321,7 @@ function getPosition(position) {
         +"("+position.coords.latitude + "," + position.coords.longitude + ")"
         ).openPopup();
     mymap.setView([position.coords.latitude,position.coords.longitude],20);
-
 }
-
-//the reference of this function is in the tutorial of this module
-function replaceGraphs(){
-    document.getElementById("graphdiv").innerHTML ="<img src='images/ucl.png'>"
-    scrollto('contactme');
-}
-
 
 //function getData,dataResponse,loadLayer are created based on the reference from the tutorial of this module
 //create the code to get the data using an XMLHttpRequest
@@ -382,11 +372,11 @@ function loadLayer(geoJSONData){
 var client;
 function removeData(layername){
     if (layername == "questionlayer") {
-        alert ("remove the question layer here!");
+        alert ("Remove the question layer here!");
         mymap.removeLayer(questionlayer);
     } 
     if (layername == "nearquestionlayer") {
-        alert ("remove the near question layer layer here!");
+        alert ("Remove the near question layer layer here!");
         mymap.removeLayer(nearquestionlayer);
     }
 }

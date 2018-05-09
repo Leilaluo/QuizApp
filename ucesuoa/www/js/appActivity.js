@@ -151,7 +151,7 @@ var questionlayer;
 
 //function getNearQuestion is design for the function "Get the nearest question" in the index page
 function getNearQuestion(){
-   alert('Getting Questions Near You!');
+   alert('Getting the Nearest question!');
    // getQuestionData is the function to get the closest question
    navigator.geolocation.getCurrentPosition(getQuestionData);
 }
@@ -321,7 +321,6 @@ function getPosition(position) {
         +"("+position.coords.latitude + "," + position.coords.longitude + ")"
         ).openPopup();
     mymap.setView([position.coords.latitude,position.coords.longitude],20);
-
 }
 
 //function getData,dataResponse,loadLayer are created based on the reference from the tutorial of this module
